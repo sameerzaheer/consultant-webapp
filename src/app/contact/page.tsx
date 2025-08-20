@@ -81,7 +81,16 @@ export default function ContactPage() {
     
     // Check if Gmail window opened successfully
     setTimeout(() => {
-      if (!gmailWindow || gmailWindow.closed || gmailWindow.location === 'about:blank') {
+      let gmailFailed = false;
+      try {
+        // Try to access the location - will throw error if cross-origin
+        gmailFailed = !gmailWindow || gmailWindow.closed || gmailWindow.location.href === 'about:blank';
+      } catch {
+        // If we can't access location due to cross-origin, assume Gmail worked
+        gmailFailed = false;
+      }
+      
+      if (gmailFailed) {
         // Gmail failed, try mailto
         window.location.href = mailtoLink;
         
