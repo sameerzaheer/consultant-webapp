@@ -1,0 +1,23 @@
+{
+  "watch": [
+    "src",
+    "pages", 
+    "components",
+    "app",
+    "public"
+  ],
+  "ext": "js,ts,jsx,tsx,json,css,scss,sass",
+  "ignore": [
+    ".git",
+    "node_modules",
+    ".next",
+    "out",
+    "dist",
+    "*.log"
+  ],
+  "delay": 500,
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "verbose": true
+}

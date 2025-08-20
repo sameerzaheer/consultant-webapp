@@ -4,21 +4,31 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:watch": "nodemon --exec \"npm run dev\"",
+    "dev:nodemon": "nodemon --watch src --watch pages --watch components --ext js,ts,jsx,tsx,json --exec \"next dev --turbopack\"",
     "build": "next build",
+    "build:watch": "nodemon --watch src --ext js,ts,jsx,tsx --exec \"npm run build\"",
     "start": "next start",
+    "start:nodemon": "nodemon --exec \"npm start\"",
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
