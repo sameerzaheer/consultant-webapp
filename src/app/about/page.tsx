@@ -22,29 +22,23 @@ const stats = [
 
 const experience = [
   {
-    title: 'Senior Strategy Consultant',
-    company: 'McKinsey & Company',
-    period: '2018 - Present',
-    description: 'Lead strategic consulting engagements for Fortune 500 companies, focusing on operational excellence and digital transformation initiatives.'
+    company: 'Forward Deployed Engineer',
+    title: 'Palantir Technologies',
+    period: '2023 - 2025',
+    description: 'Implemented workflows for customers in petroleum, renewable energy, manufacturing, construction and supplychain industries, focusing on operational excellence and digital transformation initiatives.'
   },
   {
-    title: 'Operations Manager',
-    company: 'Deloitte Consulting',
-    period: '2015 - 2018',
-    description: 'Managed large-scale transformation projects, optimizing business processes and implementing change management strategies across multiple industries.'
+    company: 'SoundHound AI',
+    title: 'Software Engineer',
+    period: '2018 - 2022',
+    description: 'Implemented end to end machine learning operations for wakeup phrase detection.'
   },
   {
-    title: 'Business Analyst',
-    company: 'PwC Advisory',
-    period: '2012 - 2015',
-    description: 'Conducted comprehensive business analysis and developed strategic recommendations for process improvement and cost optimization.'
+    company: 'Claron Technology',
+    title: 'Algorithms Engineer',
+    period: '2013 - 2018',
+    description: 'Developed computer vision solutions to solve challenging problems in medical imaging.'
   },
-  {
-    title: 'Project Coordinator',
-    company: 'EY Consulting',
-    period: '2009 - 2012',
-    description: 'Coordinated cross-functional teams on strategic initiatives, ensuring project delivery within scope, timeline, and budget constraints.'
-  }
 ];
 
 const skills = [
@@ -80,7 +74,7 @@ export default function AboutPage() {
                 About <span className="text-blue-400">Sameer Zaheer</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                A strategic consultant with over 15 years of experience helping organizations 
+                A technology consultant with over 15 years of experience helping organizations 
                 navigate complex challenges, optimize operations, and achieve sustainable growth 
                 through innovative solutions and proven methodologies.
               </p>
