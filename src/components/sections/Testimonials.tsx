@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
@@ -9,31 +7,27 @@ const testimonials = [
   {
     name: 'Client Testimonial',
     role: 'Fortune 500 Company',
-    image: '/placeholder-avatar-1.jpg',
     content: 'Professional consulting services with measurable results. Strategic insights and implementation support helped streamline our operations significantly.',
-    rating: 5
+    rating: 5,
   },
   {
     name: 'Project Stakeholder',
     role: 'Technology Sector',
-    image: '/placeholder-avatar-2.jpg',
     content: 'Excellent project management and change management expertise. The transformation process was well-structured and delivered on time.',
-    rating: 5
+    rating: 5,
   },
   {
     name: 'Business Leader',
     role: 'Mid-Market Company',
-    image: '/placeholder-avatar-3.jpg',
     content: 'Strategic planning and market analysis provided valuable insights for our growth initiatives. Professional approach and thorough methodology.',
-    rating: 5
+    rating: 5,
   },
   {
     name: 'Operations Manager',
     role: 'Manufacturing Industry',
-    image: '/placeholder-avatar-4.jpg',
     content: 'Process optimization and efficiency improvements delivered tangible results. Strong analytical skills and practical implementation strategies.',
-    rating: 5
-  }
+    rating: 5,
+  },
 ];
 
 export function Testimonials() {
@@ -56,7 +50,7 @@ export function Testimonials() {
             What <span className="text-blue-400">Clients Say</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Don't just take my word for it. Here's what leaders from various industries 
+            Don't just take my word for it. Here's what leaders from various industries
             say about working with me.
           </p>
         </motion.div>
@@ -68,7 +62,7 @@ export function Testimonials() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: '-50px' }}
             >
               <Card className="h-full bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
@@ -83,7 +77,7 @@ export function Testimonials() {
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4 shadow-lg">
                       <span className="text-white font-semibold text-sm">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        {testimonial.name.split(' ').map((n) => n[0]).join('')}
                       </span>
                     </div>
                     <div>

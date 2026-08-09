@@ -1,16 +1,13 @@
-'use client';
-
 import { motion } from 'framer-motion';
-import { Card, CardHeader, CardContent } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
-import { 
-  FiAward, 
-  FiUsers, 
-  FiTrendingUp, 
+import {
+  FiAward,
+  FiUsers,
+  FiTrendingUp,
   FiBriefcase,
-  FiArrowRight 
+  FiArrowRight,
 } from 'react-icons/fi';
 
 const stats = [
@@ -25,19 +22,22 @@ const experience = [
     company: 'Forward Deployed Engineer',
     title: 'Palantir Technologies',
     period: '2023 - 2025',
-    description: 'Implemented workflows for customers in petroleum, renewable energy, manufacturing, construction and supplychain industries, focusing on operational excellence and digital transformation initiatives.'
+    description:
+      'Implemented workflows for customers in petroleum, renewable energy, manufacturing, construction and supplychain industries, focusing on operational excellence and digital transformation initiatives.',
   },
   {
     company: 'SoundHound AI',
     title: 'Software Engineer',
     period: '2018 - 2022',
-    description: 'Implemented end to end machine learning operations for wakeup phrase detection.'
+    description:
+      'Implemented end to end machine learning operations for wakeup phrase detection.',
   },
   {
     company: 'Claron Technology',
     title: 'Algorithms Engineer',
     period: '2013 - 2018',
-    description: 'Developed computer vision solutions to solve challenging problems in medical imaging.'
+    description:
+      'Developed computer vision solutions to solve challenging problems in medical imaging.',
   },
 ];
 
@@ -51,10 +51,10 @@ const skills = [
   'Data Analysis',
   'Stakeholder Management',
   'Leadership Development',
-  'Performance Improvement'
+  'Performance Improvement',
 ];
 
-export default function AboutPage() {
+export function AboutPage() {
   return (
     <>
       {/* Hero Section */}
@@ -74,18 +74,18 @@ export default function AboutPage() {
                 About <span className="text-blue-400">Sameer Zaheer</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                A technology consultant with over 15 years of experience helping organizations 
-                navigate complex challenges, optimize operations, and achieve sustainable growth 
+                A technology consultant with over 15 years of experience helping organizations
+                navigate complex challenges, optimize operations, and achieve sustainable growth
                 through innovative solutions and proven methodologies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/contact">
+                  <a href="/contact">
                     Let's Work Together <FiArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href="/services">View Services</Link>
+                  <a href="/services">View Services</a>
                 </Button>
               </div>
             </motion.div>
@@ -96,8 +96,11 @@ export default function AboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-2 gap-4"
             >
-              {stats.map((stat, index) => (
-                <div key={stat.label} className="text-center bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="text-center bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/20"
+                >
                   <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mx-auto mb-4 border border-blue-400/30">
                     <stat.icon className="h-6 w-6 text-blue-400" />
                   </div>
@@ -124,7 +127,7 @@ export default function AboutPage() {
               Professional <span className="text-blue-600">Experience</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven track record of delivering exceptional results across leading consulting firms 
+              A proven track record of delivering exceptional results across leading consulting firms
               and diverse industry sectors.
             </p>
           </motion.div>
@@ -145,9 +148,7 @@ export default function AboutPage() {
                         <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
                         <p className="text-blue-600 font-medium">{job.company}</p>
                       </div>
-                      <div className="text-gray-500 mt-2 md:mt-0">
-                        {job.period}
-                      </div>
+                      <div className="text-gray-500 mt-2 md:mt-0">{job.period}</div>
                     </div>
                     <p className="text-gray-600">{job.description}</p>
                   </CardContent>
@@ -176,7 +177,7 @@ export default function AboutPage() {
               Core Competencies
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized skills and expertise developed through years of strategic consulting 
+              Specialized skills and expertise developed through years of strategic consulting
               and transformation leadership.
             </p>
           </motion.div>
@@ -217,13 +218,13 @@ export default function AboutPage() {
               Ready to Drive Transformation?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how my experience and expertise can help your organization 
+              Let's discuss how my experience and expertise can help your organization
               achieve its strategic objectives.
             </p>
             <Button size="lg" asChild>
-              <Link href="/contact">
+              <a href="/contact">
                 Start a Conversation <FiArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </div>

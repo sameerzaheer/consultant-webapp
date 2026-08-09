@@ -1,15 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { ContactCTA } from '@/components/sections/ContactCTA';
+---
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Services />
-      <Testimonials />
-      <ContactCTA />
-    </>
-  );
-}
+<BaseLayout>
+  <Hero client:load />
+  <Services client:visible />
+  <Testimonials client:visible />
+  <ContactCTA client:visible />
+</BaseLayout>

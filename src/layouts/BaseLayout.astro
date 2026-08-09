@@ -1,0 +1,48 @@
+---
+import '@/styles/global.css';
+import { Header } from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer.astro';
+import StructuredData from '@/components/StructuredData.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Sameer Zaheer - Strategic Consultant & Transformation Expert | AutomateThis.ca',
+  description = 'Strategic consultant with 15+ years of experience helping organizations optimize operations, drive digital transformation, and achieve sustainable growth. Based in Toronto, Canada.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Sameer Zaheer" />
+    <meta name="keywords" content="strategic consulting, business transformation, operations management, digital transformation, project management, toronto consultant, canada consulting" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:site_name" content="AutomateThis.ca" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_CA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sameer Zaheer - Strategic Consultant" />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+    <StructuredData type="person" />
+    <StructuredData type="organization" />
+  </head>
+  <body class="antialiased">
+    <Header client:load />
+    <main class="pt-16">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

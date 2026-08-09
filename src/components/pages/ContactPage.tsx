@@ -1,125 +1,111 @@
-'use client';
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import { 
-  FiMail, 
-  FiPhone, 
-  FiLinkedin, 
-  FiMapPin, 
-  FiSend 
-} from 'react-icons/fi';
+import { FiMail, FiPhone, FiLinkedin, FiMapPin, FiSend } from 'react-icons/fi';
 
 const contactDetails = [
   {
     icon: FiMail,
     label: 'Email Address',
     value: 'sameer@automatethis.ca',
-    href: 'mailto:sameer@automatethis.ca'
+    href: 'mailto:sameer@automatethis.ca',
   },
   {
     icon: FiPhone,
     label: 'Phone Number',
     value: '+1-905-7829601',
-    href: 'tel:+19057829601'
+    href: 'tel:+19057829601',
   },
   {
     icon: FiLinkedin,
     label: 'LinkedIn Profile',
     value: 'www.linkedin.com/in/sameerzaheer',
-    href: 'https://www.linkedin.com/in/sameerzaheer/'
+    href: 'https://www.linkedin.com/in/sameerzaheer/',
   },
   {
     icon: FiMapPin,
     label: 'Location',
     value: 'Toronto, Canada',
-    href: '#'
-  }
+    href: '#',
+  },
 ];
 
-export default function ContactPage() {
+export function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     service: '',
-    message: ''
+    message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Create email body content for mailto (URL encoded)
-    const emailBodyMailto = `Name: ${formData.name}%0D%0A` +
-                           `Email: ${formData.email}%0D%0A` +
-                           `Company: ${formData.company}%0D%0A` +
-                           `Service: ${formData.service}%0D%0A%0D%0A` +
-                           `Message:%0D%0A${formData.message}`;
-    
-    // Create email body content for Gmail (regular text)
-    const emailBodyGmail = `Name: ${formData.name}\n` +
-                          `Email: ${formData.email}\n` +
-                          `Company: ${formData.company}\n` +
-                          `Service: ${formData.service}\n\n` +
-                          `Message:\n${formData.message}`;
-    
+
+    const emailBodyMailto =
+      `Name: ${formData.name}%0D%0A` +
+      `Email: ${formData.email}%0D%0A` +
+      `Company: ${formData.company}%0D%0A` +
+      `Service: ${formData.service}%0D%0A%0D%0A` +
+      `Message:%0D%0A${formData.message}`;
+
+    const emailBodyGmail =
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Company: ${formData.company}\n` +
+      `Service: ${formData.service}\n\n` +
+      `Message:\n${formData.message}`;
+
     const emailSubject = `New Consultation Request from ${formData.name}`;
-    
-    // Try Gmail with a better URL format
+
     const gmailLink = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=sameer@automatethis.ca&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBodyGmail)}`;
     const mailtoLink = `mailto:sameer@automatethis.ca?subject=${encodeURIComponent(emailSubject)}&body=${emailBodyMailto}`;
-    
-    // First try Gmail
+
     const gmailWindow = window.open(gmailLink, '_blank');
-    
-    // Check if Gmail window opened successfully
+
     setTimeout(() => {
       let gmailFailed = false;
       try {
-        // Try to access the location - will throw error if cross-origin
-        gmailFailed = !gmailWindow || gmailWindow.closed || gmailWindow.location.href === 'about:blank';
+        gmailFailed =
+          !gmailWindow || gmailWindow.closed || gmailWindow.location.href === 'about:blank';
       } catch {
-        // If we can't access location due to cross-origin, assume Gmail worked
         gmailFailed = false;
       }
-      
+
       if (gmailFailed) {
-        // Gmail failed, try mailto
         window.location.href = mailtoLink;
-        
+
         setTimeout(() => {
           alert(
             "Your default email client should open.\n\n" +
-            "If it doesn't work, contact me directly:\n\n" +
-            "📧 Email: sameer@automatethis.ca\n" +
-            "📱 Phone: +1-905-7829601\n" +
-            "💼 LinkedIn: https://www.linkedin.com/in/sameerzaheer/"
+              "If it doesn't work, contact me directly:\n\n" +
+              '📧 Email: sameer@automatethis.ca\n' +
+              '📱 Phone: +1-905-7829601\n' +
+              '💼 LinkedIn: https://www.linkedin.com/in/sameerzaheer/'
           );
         }, 2000);
       } else {
-        // Gmail opened successfully
         setTimeout(() => {
           const userConfirm = confirm(
-            "Gmail should have opened with your message.\n\n" +
-            "Click 'OK' if it worked, or 'Cancel' to try your default email client."
+            'Gmail should have opened with your message.\n\n' +
+              "Click 'OK' if it worked, or 'Cancel' to try your default email client."
           );
-          
+
           if (!userConfirm) {
-            // User wants to try default email client
             window.location.href = mailtoLink;
           }
         }, 1500);
       }
     }, 1000);
-    
-    // Log for debugging
+
     console.log('Form submitted:', formData);
   };
 
@@ -142,7 +128,7 @@ export default function ContactPage() {
               Get in <span className="text-blue-400">Touch</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I'm here to help you navigate your most complex challenges and achieve 
+              I'm here to help you navigate your most complex challenges and achieve
               your strategic goals. Let's start a conversation.
             </p>
           </motion.div>
@@ -173,11 +159,13 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">{detail.label}</div>
-                      <a 
-                        href={detail.href} 
+                      <a
+                        href={detail.href}
                         className="text-gray-700 hover:text-blue-600 transition-colors"
                         target={detail.label === 'LinkedIn Profile' ? '_blank' : undefined}
-                        rel={detail.label === 'LinkedIn Profile' ? 'noopener noreferrer' : undefined}
+                        rel={
+                          detail.label === 'LinkedIn Profile' ? 'noopener noreferrer' : undefined
+                        }
                       >
                         {detail.value}
                       </a>

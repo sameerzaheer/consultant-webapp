@@ -1,57 +1,54 @@
-'use client';
-
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/ui/Section';
-import { 
-  FiTarget, 
-  FiSettings, 
-  FiSmartphone, 
-  FiBarChart, 
-  FiUsers, 
+import {
+  FiTarget,
+  FiSettings,
+  FiSmartphone,
+  FiBarChart,
+  FiUsers,
   FiTrendingUp,
-  FiArrowRight 
+  FiArrowRight,
 } from 'react-icons/fi';
 
 const services = [
   {
     icon: FiTarget,
     title: 'Strategy Consulting',
-    description: 'Develop comprehensive business strategies that align with your organization\'s goals and market opportunities.',
-    features: ['Market Analysis', 'Competitive Intelligence', 'Strategic Planning', 'Growth Strategy']
+    description: "Develop comprehensive business strategies that align with your organization's goals and market opportunities.",
+    features: ['Market Analysis', 'Competitive Intelligence', 'Strategic Planning', 'Growth Strategy'],
   },
   {
     icon: FiSettings,
     title: 'Operations Management',
     description: 'Optimize your operational processes to improve efficiency, reduce costs, and enhance productivity.',
-    features: ['Process Optimization', 'Supply Chain Management', 'Quality Improvement', 'Cost Reduction']
+    features: ['Process Optimization', 'Supply Chain Management', 'Quality Improvement', 'Cost Reduction'],
   },
   {
     icon: FiSmartphone,
     title: 'Digital Transformation',
     description: 'Guide your organization through digital transformation initiatives to stay competitive in the modern market.',
-    features: ['Technology Assessment', 'Digital Strategy', 'Change Management', 'Implementation Support']
+    features: ['Technology Assessment', 'Digital Strategy', 'Change Management', 'Implementation Support'],
   },
   {
     icon: FiBarChart,
     title: 'Project Management',
     description: 'Ensure successful project delivery through proven methodologies and effective stakeholder management.',
-    features: ['Project Planning', 'Risk Management', 'Stakeholder Engagement', 'Delivery Excellence']
+    features: ['Project Planning', 'Risk Management', 'Stakeholder Engagement', 'Delivery Excellence'],
   },
   {
     icon: FiUsers,
     title: 'Organizational Development',
     description: 'Build stronger, more effective organizations through culture development and talent optimization.',
-    features: ['Culture Assessment', 'Leadership Development', 'Team Building', 'Performance Management']
+    features: ['Culture Assessment', 'Leadership Development', 'Team Building', 'Performance Management'],
   },
   {
     icon: FiTrendingUp,
     title: 'Performance Improvement',
     description: 'Drive measurable improvements in business performance through data-driven insights and proven methodologies.',
-    features: ['KPI Development', 'Performance Analytics', 'Continuous Improvement', 'ROI Optimization']
-  }
+    features: ['KPI Development', 'Performance Analytics', 'Continuous Improvement', 'ROI Optimization'],
+  },
 ];
 
 export function Services() {
@@ -74,7 +71,7 @@ export function Services() {
             Comprehensive <span className="text-blue-600">Consulting Services</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            I offer a full range of strategic consulting services designed to help your organization 
+            I offer a full range of strategic consulting services designed to help your organization
             achieve its goals and drive sustainable growth.
           </p>
         </motion.div>
@@ -86,7 +83,7 @@ export function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: '-50px' }}
             >
               <Card className="h-full bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
@@ -122,9 +119,9 @@ export function Services() {
             Ready to transform your business? Let's discuss how I can help you achieve your goals.
           </p>
           <Button size="lg" asChild>
-            <Link href="/services">
+            <a href="/services">
               View All Services <FiArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
         </motion.div>
       </div>

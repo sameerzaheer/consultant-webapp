@@ -1,6 +1,3 @@
-'use client';
-
-import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
@@ -10,6 +7,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -21,32 +19,30 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+            <a href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
               <span className="text-blue-400">Automate</span><span className="text-white">This</span>
-            </Link>
+            </a>
           </div>
 
-          {/* Desktop navigation */}
           <div className="hidden md:flex md:space-x-8">
             {navigation.map((item) => (
-              <Link
+              <a
                 key={item.name}
                 href={item.href}
                 className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors relative group"
               >
                 {item.name}
                 <span className="absolute inset-x-0 -bottom-px h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </Link>
+              </a>
             ))}
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-6">
             <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white" asChild>
-              <Link href="/contact">Get In Touch</Link>
+              <a href="/contact">Get In Touch</a>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               type="button"
@@ -63,7 +59,6 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
@@ -73,18 +68,18 @@ export function Header() {
           >
             <div className="space-y-1 px-4 py-3">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
                   href={item.href}
                   className="block rounded-lg px-3 py-3 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <div className="pt-3 border-t border-slate-700">
                 <Button variant="outline" className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white" asChild>
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Get In Touch</Link>
+                  <a href="/contact" onClick={() => setMobileMenuOpen(false)}>Get In Touch</a>
                 </Button>
               </div>
             </div>

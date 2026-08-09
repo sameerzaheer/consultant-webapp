@@ -1,7 +1,4 @@
-'use client';
-
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/ui/Section';
 import { FiArrowRight, FiMail, FiPhone } from 'react-icons/fi';
@@ -26,7 +23,7 @@ export function ContactCTA() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss your challenges and explore how strategic consulting 
+              Let's discuss your challenges and explore how strategic consulting
               can help your organization achieve its full potential.
             </p>
             <div className="space-y-4">
@@ -58,21 +55,19 @@ export function ContactCTA() {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-slate-50/50 via-white/90 to-blue-50/50 backdrop-blur-sm rounded-xl p-8 border border-gray-200/30 shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Get Started Today
-            </h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get Started Today</h3>
             <p className="text-gray-600 mb-8">
-              Whether you're looking to optimize operations, drive digital transformation, 
+              Whether you're looking to optimize operations, drive digital transformation,
               or develop strategic initiatives, I'm here to help.
             </p>
             <div className="space-y-4">
               <Button size="lg" className="w-full" asChild>
-                <Link href="/contact">
+                <a href="/contact">
                   Start Your Project <FiArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <Link href="/services">Learn About Services</Link>
+                <a href="/services">Learn About Services</a>
               </Button>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-200">

@@ -1,7 +1,4 @@
-'use client';
-
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { FiArrowRight, FiAward, FiUsers, FiTrendingUp } from 'react-icons/fi';
 
@@ -32,18 +29,18 @@ export function Hero() {
               <span className="text-blue-400">Transformation Expert</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl">
-              With over 15 years of experience, I help organizations optimize operations, 
-              drive digital transformation, and achieve sustainable growth through strategic consulting 
+              With over 15 years of experience, I help organizations optimize operations,
+              drive digital transformation, and achieve sustainable growth through strategic consulting
               and proven methodologies.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild>
-                <Link href="/contact">
+                <a href="/contact">
                   Get Started <FiArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="/services">View Services</Link>
+                <a href="/services">View Services</a>
               </Button>
             </div>
           </motion.div>
@@ -58,9 +55,7 @@ export function Hero() {
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-4 -left-4 w-48 h-48 bg-purple-400/20 rounded-full blur-3xl"></div>
               <div className="relative">
-                <h3 className="text-xl font-semibold text-white mb-6">
-                  Key Achievements
-                </h3>
+                <h3 className="text-xl font-semibold text-white mb-6">Key Achievements</h3>
                 <div className="grid grid-cols-1 gap-6">
                   {stats.map((stat, index) => (
                     <motion.div

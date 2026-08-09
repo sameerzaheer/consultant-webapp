@@ -1,19 +1,16 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardContent } from '@/components/ui/Card';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
-import { 
-  FiTarget, 
-  FiSettings, 
-  FiSmartphone, 
-  FiBarChart, 
-  FiUsers, 
+import {
+  FiTarget,
+  FiSettings,
+  FiSmartphone,
+  FiBarChart,
+  FiUsers,
   FiTrendingUp,
   FiArrowRight,
-  FiCheck
+  FiCheck,
 } from 'react-icons/fi';
 
 const services = [
@@ -21,153 +18,161 @@ const services = [
     id: 'strategy',
     icon: FiTarget,
     title: 'Strategy Consulting',
-    description: 'Comprehensive strategic planning and business development services to drive sustainable growth.',
+    description:
+      'Comprehensive strategic planning and business development services to drive sustainable growth.',
     features: [
       'Market Analysis & Competitive Intelligence',
       'Strategic Planning & Roadmap Development',
       'Growth Strategy & Market Entry',
       'Business Model Innovation',
       'Merger & Acquisition Support',
-      'Strategic Partnership Development'
+      'Strategic Partnership Development',
     ],
     deliverables: [
       'Strategic Assessment Report',
       '3-5 Year Strategic Roadmap',
       'Market Entry Strategy',
-      'Implementation Timeline'
-    ]
+      'Implementation Timeline',
+    ],
   },
   {
     id: 'operations',
     icon: FiSettings,
     title: 'Operations Management',
-    description: 'Optimize operational processes to improve efficiency, reduce costs, and enhance productivity.',
+    description:
+      'Optimize operational processes to improve efficiency, reduce costs, and enhance productivity.',
     features: [
       'Process Optimization & Reengineering',
       'Supply Chain Management',
       'Quality Management Systems',
       'Cost Reduction Programs',
       'Lean Six Sigma Implementation',
-      'Performance Management Systems'
+      'Performance Management Systems',
     ],
     deliverables: [
       'Current State Analysis',
       'Process Improvement Recommendations',
       'Implementation Roadmap',
-      'Training Materials'
-    ]
+      'Training Materials',
+    ],
   },
   {
     id: 'digital',
     icon: FiSmartphone,
     title: 'Digital Transformation',
-    description: 'Guide organizations through digital transformation to stay competitive in the modern market.',
+    description:
+      'Guide organizations through digital transformation to stay competitive in the modern market.',
     features: [
       'Digital Strategy Development',
       'Technology Assessment & Selection',
       'Change Management',
       'Digital Skills Development',
       'Data Analytics Implementation',
-      'Automation & AI Integration'
+      'Automation & AI Integration',
     ],
     deliverables: [
       'Digital Maturity Assessment',
       'Technology Roadmap',
       'Change Management Plan',
-      'Training & Support Materials'
-    ]
+      'Training & Support Materials',
+    ],
   },
   {
     id: 'project',
     icon: FiBarChart,
     title: 'Project Management',
-    description: 'Ensure successful project delivery through proven methodologies and stakeholder management.',
+    description:
+      'Ensure successful project delivery through proven methodologies and stakeholder management.',
     features: [
       'Project Planning & Scoping',
       'Risk Management & Mitigation',
       'Stakeholder Engagement',
       'Resource Planning & Allocation',
       'Quality Assurance',
-      'Performance Monitoring'
+      'Performance Monitoring',
     ],
     deliverables: [
       'Project Charter & Plan',
       'Risk Management Framework',
       'Communication Plan',
-      'Status Reports & Dashboards'
-    ]
+      'Status Reports & Dashboards',
+    ],
   },
   {
     id: 'organization',
     icon: FiUsers,
     title: 'Organizational Development',
-    description: 'Build stronger, more effective organizations through culture development and talent optimization.',
+    description:
+      'Build stronger, more effective organizations through culture development and talent optimization.',
     features: [
       'Organizational Design & Structure',
       'Culture Assessment & Development',
       'Leadership Development Programs',
       'Team Building & Collaboration',
       'Talent Management Strategy',
-      'Performance Management Systems'
+      'Performance Management Systems',
     ],
     deliverables: [
       'Organizational Assessment',
       'Culture Development Plan',
       'Leadership Development Program',
-      'Performance Management Framework'
-    ]
+      'Performance Management Framework',
+    ],
   },
   {
     id: 'performance',
     icon: FiTrendingUp,
     title: 'Performance Improvement',
-    description: 'Drive measurable improvements through data-driven insights and proven methodologies.',
+    description:
+      'Drive measurable improvements through data-driven insights and proven methodologies.',
     features: [
       'KPI Development & Measurement',
       'Performance Analytics & Reporting',
       'Continuous Improvement Programs',
       'ROI Optimization',
       'Benchmarking & Best Practices',
-      'Scorecard Development'
+      'Scorecard Development',
     ],
     deliverables: [
       'Performance Baseline Analysis',
       'KPI Dashboard',
       'Improvement Action Plans',
-      'ROI Reports'
-    ]
-  }
+      'ROI Reports',
+    ],
+  },
 ];
 
 const methodology = [
   {
     step: '01',
     title: 'Discovery & Assessment',
-    description: 'Comprehensive analysis of your current state, challenges, and opportunities.'
+    description:
+      'Comprehensive analysis of your current state, challenges, and opportunities.',
   },
   {
     step: '02',
     title: 'Strategy Development',
-    description: 'Co-create tailored solutions and strategies aligned with your objectives.'
+    description: 'Co-create tailored solutions and strategies aligned with your objectives.',
   },
   {
     step: '03',
     title: 'Implementation Planning',
-    description: 'Develop detailed roadmaps with clear timelines and success metrics.'
+    description: 'Develop detailed roadmaps with clear timelines and success metrics.',
   },
   {
     step: '04',
     title: 'Execution Support',
-    description: 'Guide implementation with ongoing support and course corrections.'
+    description: 'Guide implementation with ongoing support and course corrections.',
   },
   {
     step: '05',
     title: 'Measurement & Optimization',
-    description: 'Monitor progress and optimize for sustained results and continuous improvement.'
-  }
+    description:
+      'Monitor progress and optimize for sustained results and continuous improvement.',
+  },
 ];
 
-export default function ServicesPage() {
+export function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
@@ -187,13 +192,13 @@ export default function ServicesPage() {
               Comprehensive <span className="text-blue-400">Consulting Services</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              I offer a full spectrum of strategic consulting services designed to help your 
+              I offer a full spectrum of strategic consulting services designed to help your
               organization navigate challenges, optimize operations, and achieve sustainable growth.
             </p>
             <Button size="lg" asChild>
-              <Link href="/contact">
+              <a href="/contact">
                 Start Your Project <FiArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </a>
             </Button>
           </motion.div>
         </div>
@@ -276,7 +281,7 @@ export default function ServicesPage() {
               Proven <span className="text-blue-400">Methodology</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              My structured approach ensures consistent results and measurable outcomes 
+              My structured approach ensures consistent results and measurable outcomes
               across all engagements.
             </p>
           </motion.div>
@@ -311,21 +316,19 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Ready to Get Started?
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss your specific needs and develop a customized solution 
+              Let's discuss your specific needs and develop a customized solution
               that drives results for your organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link href="/contact">
+                <a href="/contact">
                   Schedule Consultation <FiArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link href="/about">Learn About Me</Link>
+                <a href="/about">Learn About Me</a>
               </Button>
             </div>
           </motion.div>
