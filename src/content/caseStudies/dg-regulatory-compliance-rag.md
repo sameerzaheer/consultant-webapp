@@ -1,6 +1,7 @@
 ---
 title: DG Compliance RAG & Verification
 client: Nidral — dangerous-goods regulatory compliance
+clientUrl: https://nidral.com
 role: AI/ML Consultant — AutomateThis
 category: consulting
 order: 3

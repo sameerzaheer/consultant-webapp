@@ -1,6 +1,7 @@
 ---
 title: Physician Notes & Medical Forms Document Extraction
-client: US pharmacy & clinic services provider
+client: CPCG — US pharmacy & clinic services provider
+clientUrl: https://www.cpcgr.com/
 role: AI/ML Consultant — AutomateThis
 category: consulting
 order: 1
@@ -13,7 +14,7 @@ techStack:
   - Confidence-threshold routing
   - Human-in-the-loop review
 problem: >-
-  A pharmacy and clinic services provider had a department manually
+  CPCG, a pharmacy and clinic services provider, had a department manually
   transcribing structured data out of physician notes and medical intake
   forms — handwritten and typed, inconsistent formats, no two clinics
   filling them out the same way. It was slow, it didn't scale with volume,

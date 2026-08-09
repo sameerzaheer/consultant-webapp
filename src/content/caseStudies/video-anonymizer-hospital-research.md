@@ -1,6 +1,7 @@
 ---
 title: Video Anonymizer for Hospital Research
-client: Canadian hospital research group
+client: UHN — University Health Network, Toronto
+clientUrl: https://www.uhn.ca
 role: AI/ML Consultant — AutomateThis
 category: consulting
 order: 2
@@ -13,7 +14,7 @@ techStack:
   - Model hosting
   - Video processing
 problem: >-
-  A hospital research group had recorded video needed for a study, but
+  UHN had recorded video needed for a study, but
   couldn't get research ethics board approval to use it — patients and
   staff were identifiable on camera, and de-identifying footage by hand
   wasn't practical at the volume required. The research was stalled, not

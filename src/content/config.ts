@@ -5,6 +5,7 @@ const caseStudies = defineCollection({
   schema: z.object({
     title: z.string(),
     client: z.string(),
+    clientUrl: z.string().url().optional(),
     role: z.string(),
     problem: z.string(),
     approach: z.string(),

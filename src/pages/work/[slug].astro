@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title, client, role, problem, approach, outcome, techStack, heroMetric, platform } = entry.data;
+const { title, client, clientUrl, role, problem, approach, outcome, techStack, heroMetric, platform } = entry.data;
 const { Content } = await render(entry);
 ---
 
@@ -24,7 +24,21 @@ const { Content } = await render(entry);
 
     <div class="mt-6 flex items-start justify-between gap-4">
       <div>
-        <p class="font-mono text-sm text-fg-subtle">{client}</p>
+        {clientUrl ? (
+          <a
+            href={clientUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group/client inline-flex items-center gap-1.5 font-mono text-sm text-fg-subtle hover:text-accent-bright transition-colors"
+          >
+            {client}
+            <svg class="h-3 w-3 shrink-0 transition-transform group-hover/client:translate-x-0.5 group-hover/client:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </a>
+        ) : (
+          <p class="font-mono text-sm text-fg-subtle">{client}</p>
+        )}
         <h1 class="mt-2 text-3xl font-semibold text-fg sm:text-4xl">{title}</h1>
         <p class="mt-2 text-fg-muted">{role}</p>
       </div>
