@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import TechTag from '@/components/ui/TechTag.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('caseStudies');
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, client, role, problem, approach, outcome, techStack, heroMetric, platform } = entry.data;
+const { Content } = await render(entry);
+---
+
+<Layout title={`${title} | AutomateThis`} description={heroMetric}>
+  <article class="px-6 py-20 sm:px-10 lg:py-28 max-w-2xl">
+    <a href="/#case-studies" class="font-mono text-xs text-fg-subtle hover:text-accent-bright transition-colors">
+      &larr; Back to case studies
+    </a>
+
+    <div class="mt-6 flex items-start justify-between gap-4">
+      <div>
+        <p class="font-mono text-sm text-fg-subtle">{client}</p>
+        <h1 class="mt-2 text-3xl font-semibold text-fg sm:text-4xl">{title}</h1>
+        <p class="mt-2 text-fg-muted">{role}</p>
+      </div>
+      {platform && (
+        <span class="shrink-0 font-mono text-[0.65rem] uppercase tracking-wide text-accent border border-accent-dim rounded px-2 py-0.5">
+          Built on {platform}
+        </span>
+      )}
+    </div>
+
+    <p class="mt-4 text-lg text-accent">{heroMetric}</p>
+
+    <ul class="mt-5 flex flex-wrap gap-2">
+      {techStack.map((tech) => (
+        <li><TechTag>{tech}</TechTag></li>
+      ))}
+    </ul>
+
+    <div class="mt-12 space-y-10">
+      <div>
+        <h2 class="font-mono text-xs uppercase tracking-wide text-fg-subtle">Problem</h2>
+        <p class="mt-3 text-fg-muted leading-relaxed">{problem}</p>
+      </div>
+      <div>
+        <h2 class="font-mono text-xs uppercase tracking-wide text-fg-subtle">Approach</h2>
+        <p class="mt-3 text-fg-muted leading-relaxed">{approach}</p>
+      </div>
+      <div>
+        <h2 class="font-mono text-xs uppercase tracking-wide text-fg-subtle">Outcome</h2>
+        <p class="mt-3 text-fg-muted leading-relaxed">{outcome}</p>
+      </div>
+    </div>
+
+    <div class="prose mt-12 max-w-none">
+      <Content />
+    </div>
+  </article>
+</Layout>

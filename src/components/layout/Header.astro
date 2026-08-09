@@ -1,0 +1,87 @@
+---
+const navigation = [
+  { name: 'About', href: '/#about', index: '01' },
+  { name: 'Case Studies', href: '/#case-studies', index: '02' },
+  { name: 'Palantir Foundry Work', href: '/#foundry', index: '03' },
+  { name: 'Blog', href: '/blog/', index: '04' },
+  { name: 'Patents', href: '/#patents', index: '05' },
+  { name: 'Contact', href: '/#contact', index: '06' },
+];
+---
+
+<header>
+  {/* Zero-JS mobile drawer toggle */}
+  <input type="checkbox" id="nav-toggle" class="peer/nav sr-only" />
+
+  {/* Desktop fixed sidebar */}
+  <div class="hidden lg:flex lg:fixed lg:inset-y-0 lg:left-0 lg:w-[22rem] xl:w-[26rem] lg:flex-col lg:justify-between lg:px-12 lg:py-16">
+    <div>
+      <a href="/" class="inline-block font-mono text-sm tracking-wide text-fg hover:text-accent-bright transition-colors">
+        <span class="text-accent">Automate</span>This
+      </a>
+      <h1 class="mt-6 text-2xl font-semibold text-fg leading-snug">Outcome-focused AI consulting</h1>
+
+      <nav aria-label="Primary" class="mt-14">
+        <ul class="space-y-4">
+          {navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="group flex items-center gap-3 text-sm text-fg-muted hover:text-fg transition-colors"
+              >
+                <span class="font-mono text-xs text-fg-subtle group-hover:text-accent transition-colors">{item.index}</span>
+                <span class="h-px w-6 bg-border group-hover:bg-accent group-hover:w-8 transition-all"></span>
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  {/* Mobile top bar */}
+  <div class="lg:hidden fixed top-0 inset-x-0 z-40 flex items-center justify-between px-5 py-4 bg-bg/90 backdrop-blur-sm border-b border-border">
+    <a href="/" class="font-mono text-sm text-fg">
+      <span class="text-accent">Automate</span>This
+    </a>
+    <label
+      for="nav-toggle"
+      class="cursor-pointer p-2 -mr-2 text-fg"
+      aria-label="Toggle navigation menu"
+      role="button"
+      tabindex="0"
+    >
+      <svg class="h-6 w-6 peer-checked/nav:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+  </div>
+
+  {/* Mobile drawer backdrop */}
+  <label
+    for="nav-toggle"
+    aria-hidden="true"
+    class="lg:hidden fixed inset-0 z-40 bg-bg/80 opacity-0 pointer-events-none peer-checked/nav:opacity-100 peer-checked/nav:pointer-events-auto transition-opacity duration-200"
+  ></label>
+
+  {/* Mobile drawer panel */}
+  <nav
+    aria-label="Primary"
+    class="lg:hidden fixed top-0 right-0 z-50 h-full w-72 max-w-[80vw] bg-bg-elevated border-l border-border px-8 py-20 translate-x-full peer-checked/nav:translate-x-0 transition-transform duration-200"
+  >
+    <label for="nav-toggle" class="absolute top-4 right-5 cursor-pointer p-2 text-fg" aria-label="Close navigation menu">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </label>
+    <ul class="space-y-6">
+      {navigation.map((item) => (
+        <li>
+          <label for="nav-toggle" class="block cursor-pointer">
+            <a href={item.href} class="flex items-center gap-3 text-fg-muted hover:text-fg transition-colors">
+              <span class="font-mono text-xs text-accent">{item.index}</span>
+              <span>{item.name}</span>
+            </a>
+          </label>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

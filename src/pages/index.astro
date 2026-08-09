@@ -1,14 +1,18 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import Layout from '@/layouts/Layout.astro';
 import { Hero } from '@/components/sections/Hero';
-import { Services } from '@/components/sections/Services';
-import { Testimonials } from '@/components/sections/Testimonials';
-import { ContactCTA } from '@/components/sections/ContactCTA';
+import About from '@/components/sections/About.astro';
+import CaseStudies from '@/components/sections/CaseStudies.astro';
+import FoundryWork from '@/components/sections/FoundryWork.astro';
+import Patents from '@/components/sections/Patents.astro';
+import Contact from '@/components/sections/Contact.astro';
 ---
 
-<BaseLayout>
+<Layout>
   <Hero client:load />
-  <Services client:visible />
-  <Testimonials client:visible />
-  <ContactCTA client:visible />
-</BaseLayout>
+  <About />
+  <CaseStudies />
+  <FoundryWork />
+  <Patents />
+  <Contact />
+</Layout>

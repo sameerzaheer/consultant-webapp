@@ -1,0 +1,28 @@
+---
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import { ContactForm } from '@/components/sections/ContactForm';
+---
+
+<section id="contact" class="scroll-mt-16 px-6 py-20 sm:px-10 lg:py-28 max-w-2xl">
+  <SectionHeading index="06" title="Contact" />
+
+  <p class="mb-8 max-w-xl text-fg-muted">
+    Let's talk about your project.
+  </p>
+
+  <div class="grid gap-10 sm:grid-cols-[1fr_auto] sm:gap-14">
+    <ContactForm client:visible />
+
+    <div class="flex flex-row gap-6 sm:flex-col sm:gap-4 font-mono text-sm">
+      <a href="mailto:sameer@automatethis.ca" class="text-fg-muted hover:text-accent-bright transition-colors">
+        Email
+      </a>
+      <a href="https://wa.me/19057829601" target="_blank" rel="noopener noreferrer" class="text-fg-muted hover:text-accent-bright transition-colors">
+        WhatsApp
+      </a>
+      <a href="https://www.linkedin.com/in/sameerzaheer/" target="_blank" rel="noopener noreferrer" class="text-fg-muted hover:text-accent-bright transition-colors">
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>

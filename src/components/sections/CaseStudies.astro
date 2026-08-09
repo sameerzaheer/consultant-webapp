@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '@/components/ui/SectionHeading.astro';
+import CaseStudyCard from '@/components/ui/CaseStudyCard.astro';
+
+const caseStudies = (await getCollection('caseStudies', ({ data }) => data.category === 'consulting')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section id="case-studies" class="scroll-mt-16 px-6 py-20 sm:px-10 lg:py-28 max-w-3xl">
+  <SectionHeading index="02" title="Case Studies" />
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    {caseStudies.map((entry) => (
+      <CaseStudyCard entry={entry} />
+    ))}
+  </div>
+</section>
